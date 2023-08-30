@@ -11,7 +11,10 @@ Registrate en Devstagram
         </div>
 
         <div class="md:w-6/12 bg-white p-6 rounded-lg shadow-xl">
-            <form action="">
+            <form action="{{ route('register.store') }}" method="POST" novalidate>
+                @csrf
+
+
                 <div class="mb-5">
                     <label for="name" class="mb-2 block uppercase text-gray-500 font-bold">
                         nombre
@@ -21,8 +24,17 @@ Registrate en Devstagram
                         name="name"
                         type="text"
                         placeholder="Tu nombre"
-                        class="border p-3 w-full rounded-lg"
+                        class="border p-3 w-full rounded-lg @error('name')
+                            border-red-500
+                        @enderror"
+                        value="{{ old('name') }}"
                         >
+
+                    @error('name')
+                        <p class="bg-red-500 text-white m-2 rounded text-sm p-2 text-center">
+                            {{ $message }}
+                        </p>
+                    @enderror
                 </div>
 
 
@@ -39,6 +51,13 @@ Registrate en Devstagram
                         placeholder="Tu nombre de usuario"
                         class="border p-3 w-full rounded-lg"
                         >
+
+
+                        @error('username')
+                        <p class="bg-red-500 text-white m-2 rounded text-sm p-2 text-center">
+                            {{ $message }}
+                        </p>
+                        @enderror
                 </div>
 
 
@@ -54,6 +73,12 @@ Registrate en Devstagram
                         placeholder="Tu email"
                         class="border p-3 w-full rounded-lg"
                         >
+
+                        @error('email')
+                        <p class="bg-red-500 text-white m-2 rounded text-sm p-2 text-center">
+                            {{ $message }}
+                        </p>
+                        @enderror
                 </div>
 
 
@@ -68,6 +93,12 @@ Registrate en Devstagram
                         placeholder="Tu password"
                         class="border p-3 w-full rounded-lg"
                         >
+
+                        @error('password')
+                        <p class="bg-red-500 text-white m-2 rounded text-sm p-2 text-center">
+                            {{ $message }}
+                        </p>
+                        @enderror
                 </div>
 
 
