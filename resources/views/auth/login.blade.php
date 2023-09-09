@@ -11,7 +11,7 @@ Inicia esion en Devstagram
         </div>
 
         <div class="md:w-6/12 bg-white p-6 rounded-lg shadow-xl">
-            <form action="{{ route('login.store') }}" method="POST" novalidate>
+            <form action="{{ route('login') }}" method="POST" novalidate>
                 @csrf
 
 

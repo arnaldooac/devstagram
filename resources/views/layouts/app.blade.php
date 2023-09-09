@@ -12,12 +12,16 @@
 
     @stack('scripts')
 
+    @livewireStyles()
+
 </head>
 <body class="bg-gray-100">
 
     <header class="p-5 border-b bg-white shadow">
        <div class= "container flex justify-between items-center">
-            <h1 class="text-3xl font-black">Devstagram</h1>
+            <a href="{{ route('home') }}" class="text-3xl font-black">
+                Devstagram
+            </a>
 
             <nav class="flex gap-2 items-center">
                 @auth
@@ -42,7 +46,7 @@
                         <button class="font-bold uppercase text-gray-600 text-sm">Cerrar Sesion</button>
                     </form>
                 @else
-                    <a href="{{ route('login.index') }}" class="font-bold uppercase text-gray-600 text-sm">Login</a>
+                    <a href="{{ route('login') }}" class="font-bold uppercase text-gray-600 text-sm">Login</a>
                     <a href="{{ route('register.index') }}" class="font-bold uppercase text-gray-600 text-sm">Crear cuenta</a>
                 @endauth
 
@@ -67,7 +71,7 @@
 
 
 
-
+    @livewireScripts()
 
 </body>
 </html>
